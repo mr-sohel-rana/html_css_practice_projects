@@ -124,7 +124,7 @@ h3::before{
     box-shadow: 3px 2px 1px rgb(148, 142, 142);
     border-radius: 10px;
     padding: 5px;
-    transition: 2s;
+    transition: 1s;
     margin-left:100px
 }
 .s:hover{
@@ -132,6 +132,56 @@ h3::before{
    box-shadow: 1px 1px  1px rgb(3, 3, 239);
    transform:translate(20px,20px);
 }
+ .ani {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111; /* ভিতরের box color */
+  z-index: 0;
+}
+
+/* Pseudo-element দিয়ে border effect */
+.ani::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 16px;  
+  background: linear-gradient(270deg, red, orange, green, blue, purple);
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: rainbow 4s linear infinite;
+  animation-play-state: paused;  
+}
+
+.ani:hover::before {
+  animation-play-state: running;  
+}
+
+/* Masking যাতে শুধু 4px border দেখা যায় */ 
+.ani::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  background: #111;  
+  border-radius: 12px;
+  z-index: 1;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+
+
     </style>
 </head>
 <body>
@@ -226,6 +276,13 @@ Lorem ipsum, dolor sit amet
 </div>
 <div class="s">
     this is sohel Lorem ipsum dolor sit amet.
+</div>
+<div class="ani">
+    <p>Lorem ipsum dolor, sit amet consectetur 
+        adipisicing elit. Hic
+         ab facilis aut minus tenetur optio nulla
+          culpa, odio assumenda ipsam.</p>
+
 </div>
 </body>
 </html>
