@@ -10,8 +10,8 @@
  
         *{
             margin: 10px;
-            line-height:.9;
-            letter-spacing: 10px;
+ 
+  
         }
         h1{
             color:red;
@@ -50,7 +50,30 @@ span{
     color:green;
    
 }
+h3{
+    background-color: green;
+    width: 300px;
+    height: 300px;
+}
+input:hover{
+    background-color: red;
 
+}
+input:focus{
+    border: 1px blue solid;
+}
+input:hover::placeholder{
+    color: white;
+}
+input:focus::placeholder{
+    color:blue
+}
+table,tr,th,td{
+    border: 1px gray solid;
+}
+tr:nth-child(even){
+    background-color: rgb(202, 201, 201);
+}
     </style>
 </head>
 <body>
@@ -65,5 +88,52 @@ span{
          <span>✅</span>
 
          <h1>this is a heading </h1>
+
+         <h3>
+            Lorem ipsum dolor sit amet consectetur a
+            dipisicing elit. Inventore ea porro
+             ullam vel doloribus eligendi minus omnis
+              laborum quam placeat?
+         </h3>
+
+        <div>
+            <input type="text" placeholder="input your">
+        </div>
+
+        <div>
+            <table>
+                <tr>
+                    <th>sl</th>
+                    <th>name</th>
+                    <th>roll</th>
+                    <th>dept</th>
+                </tr>
+                <tr>
+                    <td>sl</td>
+                    <td>name</td>
+                    <td>roll</td>
+                    <td>dept</td>
+                </tr>
+                <tr>
+                    <td>sl</td>
+                    <td>name</td>
+                    <td>roll</td>
+                    <td>dept</td>
+                </tr>
+                <tr>
+                    <td>sl</td>
+                    <td>name</td>
+                    <td>roll</td>
+                    <td>dept</td>
+                </tr>
+                <tr>
+                    <td>sl</td>
+                    <td>name</td>
+                    <td>roll</td>
+                    <td>dept</td>
+                </tr>
+               
+            </table>
+        </div>
 </body>
 </html>
